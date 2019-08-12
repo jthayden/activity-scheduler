@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'act_scheduler__project.urls'
+ROOT_URLCONF = 'scheduler__project.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'act_scheduler__project.wsgi.application'
+WSGI_APPLICATION = 'scheduler__project.wsgi.application'
 
 
 # Database
