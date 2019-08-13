@@ -12,7 +12,7 @@ componentDidMount() {
 }
 
 getAllTennisComplexes = () => {
-    axios.get('/api/v1/tenniscomplexs/')
+    axios.get('/api/v1/tenniscomplexes/')
     .then(res => {
         this.setState({ tennis_complexes: res.data })
     })
