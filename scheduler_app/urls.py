@@ -5,6 +5,10 @@ from . import views
 router = routers.DefaultRouter()
 router.register('golfcourses', views.GolfCourseView)
 router.register('teetimes', views.TeeTimeBookingView)
+router.register('golflessons', views.GolfLessonBookingView)
+router.register('tenniscomplex', views.TennisComplexView)
+router.register('courtbooking', views.CourtBookingView)
+router.register('tennislessons', views.TennisLessonBookingView)
 
 urlpatterns = [
     path('', include(router.urls))
