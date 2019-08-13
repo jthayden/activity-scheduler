@@ -10,7 +10,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <div>
-            <h1>Activity Scheduler</h1>
+            <h1>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
             <div>
               <div><Link to='/'>Home</Link></div>
             </div>
