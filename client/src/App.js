@@ -9,7 +9,9 @@ class App extends Component {
     let HomePageComponent = () => {
       return (
         <div> 
+          <h2>Golf Courses</h2>
           <GolfCourseList />
+          <h2>Tennis Complexes</h2>
           <TennisComplexList />
         </div>
       )
