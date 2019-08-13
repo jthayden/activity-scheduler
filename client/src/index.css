@@ -21,5 +21,9 @@ p {
 }
 
 .navbar {
-  align-content: center;
+  display: flex;
+}
+
+.navbar-link {
+  margin: 25px;
 }
