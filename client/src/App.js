@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import GolfCourseList from './components/GolfCourseList'
 import TennisComplexList from './components/TennisComplexList'
+import GolfCourse from './components/GolfCourse'
 import './App.css'
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
           </div>
           <Switch>
             <Route exact path='/' component={HomePageComponent}/>
-            {/* <Route path='/golfcourses/:id' component={GolfCourse} /> */}
+            <Route path='/golfcourses/:id' component={GolfCourse} />
           </Switch>
         </div>
 

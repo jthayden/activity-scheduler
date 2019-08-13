@@ -24,13 +24,13 @@ export default class GolfCourseList extends Component {
     render() {
         let golfCourseList = this.state.golf_courses.map((golf_course) => {
             return (
-                // <Link to={`/golfcourses/${golf_course.id}`}>
+                <Link to={`/golfcourses/${golf_course.id}`}>
                 <div>
                     <img src={golf_course.photo_url} alt={golf_course.name} />
                     <h2>{golf_course.name}</h2>
                     <p>{golf_course.description}</p>
                 </div>
-                // </Link>
+                </Link>
             )
         })
         return (
