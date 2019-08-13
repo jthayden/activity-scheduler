@@ -19,11 +19,11 @@ class TeeTimeBooking(models.Model):
     def __str__(self):
         return self.name
 
-class LessonBooking(models.Model):
+class GolfLessonBooking(models.Model):
     name = models. CharField(max_length=255)
     time = models.CharField(max_length=255)
     pro = models.CharField(max_length=255)
-    course = models.ForeignKey(GolfCourse, on_delete=models.CASCADE, related_name='lesson_bookings')
+    course = models.ForeignKey(GolfCourse, on_delete=models.CASCADE, related_name='golf_lesson_bookings')
     
     def __str__(self):
         return self.name   
