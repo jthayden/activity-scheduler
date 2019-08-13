@@ -20,6 +20,11 @@ class App extends Component {
 
     return (
       <Router>
+        <div>
+          <Link to=''>Golf></Link>
+          <Link to=''>Tennis></Link>  
+          <Link to=''>Login</Link>
+        </div>
         <div className='App'>
           <div>
             <h1>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
