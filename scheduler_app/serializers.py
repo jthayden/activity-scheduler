@@ -33,4 +33,4 @@ class TennisComplexSerializer(serializers.ModelSerializer):
     tennis_lesson_bookings = TennisLessonBookingSerializer(many=True, read_only=True)
     class Meta:
         model = TennisComplex
-        fields = ('id','name','description','photo_url','court_booking','tennis_lesson_bookings')
+        fields = ('id','name','description','photo_url','court_bookings','tennis_lesson_bookings')
