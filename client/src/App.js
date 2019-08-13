@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import GolfCourseList from './components/GolfCourseList'
-// import GolfCourse from './components/GolfCourse'
+import TennisComplexList from './components/TennisComplexList'
 import './App.css'
 
 class App extends Component {
   render() {
+    let HomePageComponent = () => {
+      return (
+        <div> 
+          <GolfCourseList />
+          <TennisComplexList />
+        </div>
+      )
+    }
+
+
     return (
       <Router>
         <div className='App'>
@@ -16,7 +26,7 @@ class App extends Component {
             </div>
           </div>
           <Switch>
-            <Route exact path='/' component={GolfCourseList}/>
+            <Route exact path='/' component={HomePageComponent}/>
             {/* <Route path='/golfcourses/:id' component={GolfCourse} /> */}
           </Switch>
         </div>
