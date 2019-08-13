@@ -26,7 +26,7 @@ export default class GolfCourseList extends Component {
             return (
                 // <Link to={`/golfcourses/${golf_course.id}`}>
                 <div>
-                    <img src={golf_course.photo_url} alt={golf_course.name} width='250px' />
+                    <img src={golf_course.photo_url} alt={golf_course.name} />
                     <h2>{golf_course.name}</h2>
                     <p>{golf_course.description}</p>
                 </div>
