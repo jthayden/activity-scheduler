@@ -20,9 +20,9 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
-          <Link to=''>Golf></Link>
-          <Link to=''>Tennis></Link>  
+        <div className='navbar'>
+          <Link to=''>Golf</Link>
+          <Link to=''>Tennis</Link>  
           <Link to=''>Login</Link>
         </div>
         <div className='App'>

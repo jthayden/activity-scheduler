@@ -19,3 +19,7 @@ img {
 p {
   margin: 20px;
 }
+
+.navbar {
+  align-content: center;
+}
