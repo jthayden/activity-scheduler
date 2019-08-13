@@ -40,7 +40,7 @@ class CourtBooking(models.Model):
     name = models.CharField(max_length=255)
     time = models.CharField(max_length=255)
     court_type = models.CharField(max_length=255)
-    guests = models.CharField(max_lenght=255)
+    guests = models.CharField(max_length=255)
     tennis_complex = models.ForeignKey(TennisComplex, on_delete=models.CASCADE, related_name='court_bookings') 
 
     def __str__(self):
