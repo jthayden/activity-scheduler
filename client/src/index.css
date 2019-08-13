@@ -13,6 +13,5 @@ code {
 }
 
 img {
-  display: block;
-  max-height: 350px;
+  max-height: 300px;
 }
