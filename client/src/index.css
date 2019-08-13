@@ -15,3 +15,7 @@ code {
 img {
   max-height: 300px;
 }
+
+p {
+  margin: 20px;
+}
