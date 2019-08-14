@@ -25,7 +25,7 @@ export default class CreateGolfCourse extends Component {
     }
 
     handleSubmit = (evt) => {
-        event.preventDefault()
+        evt.preventDefault()
         axios.post('/api/v1/golfcourses/', this.state.new_golf_course).then(() => {
             this.setState({ redirectToHome: true })
             this.getAllGolfCourses()
