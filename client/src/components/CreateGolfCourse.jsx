@@ -4,19 +4,23 @@ import { Redirect } from 'react-router-dom'
 
 export default class CreateGolfCourse extends Component {
     state = {
-        new_golf_course: {},
+        new_golf_course: {
+            name:'',
+            description:'',
+            photo_url:''
+        },
         redirectToHome: false
     }
 
-    componentDidMount() {
-        this.getAllGolfCourses()
-    }
+    // componentDidMount() {
+    //     this.getAllGolfCourses()
+    // }
 
-    getAllGolfCourses = () => {
-        axios.get('/api/v1/golfcourses/').then(res => {
-            this.setState({golf_courses: res.data})
-        })
-    }
+    // getAllGolfCourses = () => {
+    //     axios.get('/api/v1/golfcourses/').then(res => {
+    //         this.setState({golf_courses: res.data})
+    //     })
+    // }
 
     handleInputChange = (evt) => {
         let copiedGolfCourse = {...this.state.new_golf_course}
@@ -28,7 +32,7 @@ export default class CreateGolfCourse extends Component {
         evt.preventDefault()
         axios.post('/api/v1/golfcourses/', this.state.new_golf_course).then(() => {
             this.setState({ redirectToHome: true })
-            this.getAllGolfCourses()
+            // this.getAllGolfCourses()
         })
     }
 
