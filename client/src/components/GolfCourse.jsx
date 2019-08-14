@@ -30,7 +30,7 @@ export default class GolfCourse extends Component {
     }
 
     getGolfCourse = () => {
-        axios.get(`/api/v1/golfcourses/${this.props.match.params.id}`)
+        axios.get(`/api/v1/golfcourses/${this.props.match.params.id}/`)
         .then(res => {
             this.setState({ golf_course: res.data })
         })
@@ -46,13 +46,15 @@ export default class GolfCourse extends Component {
         })
         return (
             <div>
-                <img src={this.state.golf_course.photo_url} />
-                <h2>{this.state.golf_course.name}</h2>
-                <p>{this.state.golf_course.description}</p>
-                
-                <h4>Tee Time Bookings</h4>
-                <Link to='/teetimes/new'>Book a Tee Time</Link>
-                {teeTimeBookingList}
+                <div>
+                    <img src={this.state.golf_course.photo_url} />
+                    <h2>{this.state.golf_course.name}</h2>
+                    <p>{this.state.golf_course.description}</p>
+                    
+                    <h4>Tee Time Bookings</h4>
+                    <Link to='/teetimes/new'>Book a Tee Time</Link>
+                    {teeTimeBookingList}
+                </div>
             </div>
         )
     }
