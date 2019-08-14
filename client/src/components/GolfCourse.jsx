@@ -40,7 +40,9 @@ export default class GolfCourse extends Component {
     render() {
         let teeTimeBookingList = this.state.golf_course.tee_time_bookings.map((tee_time_booking) => {
             return (
-                <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}</p>
+                <Link>
+                    <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}</p>
+                </Link>
             )
         })
         return (
@@ -50,7 +52,7 @@ export default class GolfCourse extends Component {
                 <p>{this.state.golf_course.description}</p>
                 
                 <h4>Tee Time Bookings</h4>
-
+                {teeTimeBookingList}
             </div>
         )
     }
