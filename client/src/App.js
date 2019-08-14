@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import GolfCourseList from './components/GolfCourseList'
 import TennisComplexList from './components/TennisComplexList'
 import GolfCourse from './components/GolfCourse'
+import CreateGolfCourse from './components/CreateGolfCourse'
 import './App.css'
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
           </div>
           <Switch>
             <Route exact path='/' render={HomePageComponent}/>
+            <Route path='/golfcourse/create' component={CreateGolfCourse} />
             <Route path='/golfcourses/:id' component={GolfCourse} />
           </Switch>
         </div>

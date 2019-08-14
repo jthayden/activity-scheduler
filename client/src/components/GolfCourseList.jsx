@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom'
 
 export default class GolfCourseList extends Component {
     state = {
-        golf_courses: []
+        golf_courses: [],
+        new_golf_course: {
+            name:'',
+            description:'',
+            photo_url:''
+        }
     }
 
     componentDidMount() {
@@ -36,6 +41,7 @@ export default class GolfCourseList extends Component {
         return (
             <div>
                 {golfCourseList}
+                <Link to={'golfcourses/create'}>Add Golf Course</Link>
             </div>
         )
     }
