@@ -4,10 +4,9 @@ import { Redirect, Link } from 'react-router-dom'
 
 export default class GolfCourse extends Component {
     state = {
-        golf_course:{
-            tee_time_bookings:[],
-            golf_lesson_bookings:[]
-        },
+        golf_course:{},
+        tee_time_bookings:[],
+        golf_lesson_bookings:[],
         redirectToHome: false,
         isNewTeeTimeBookingFormDisplayed: false,
         newTeeTimeBooking: {
@@ -38,7 +37,7 @@ export default class GolfCourse extends Component {
     }
 
     render() {
-        let teeTimeBookingList = this.state.golf_course.tee_time_bookings.map((tee_time_booking) => {
+        let teeTimeBookingList = this.state.tee_time_bookings.map((tee_time_booking) => {
             return (
                 <Link>
                     <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}</p>
