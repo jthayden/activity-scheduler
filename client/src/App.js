@@ -34,8 +34,8 @@ class App extends Component {
             </div>
           </div>
           <Switch>
-            <Route exact path='/' component={HomePageComponent}/>
-            <Route path='/golfcourses/:id' component={GolfCourse} />
+            <Route exact path='/' render={HomePageComponent}/>
+            <Route path='/golfcourses/:id' render={GolfCourse} />
           </Switch>
         </div>
 
