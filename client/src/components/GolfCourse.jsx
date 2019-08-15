@@ -5,7 +5,7 @@ import { Redirect, Link } from 'react-router-dom'
 export default class GolfCourse extends Component {
     state = {
         golf_course:{
-            tee_time_bookings:[],
+            tee_time_bookings:[{}],
             golf_lesson_bookings:[],
         },
         redirectToHome: false,
@@ -36,19 +36,13 @@ export default class GolfCourse extends Component {
             })
         }
     
-    
-
-    
-
-    
-        
 
     render() {
         let teeTimeBookingList = this.state.golf_course.tee_time_bookings.map((tee_time_booking) => {
             return (
-                // <Link>
-                    <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}{tee_time_booking.course}</p>
-                // </Link>
+                <Link to={`/teetimes/${tee_time_booking.id}/`}>    
+                <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}{tee_time_booking.course}</p>
+                </Link>
             )
         })
         return (

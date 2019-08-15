@@ -9,7 +9,7 @@ export default class TeeTimeBooking extends Component {
     }
 
     componentDidMount() {
-        axios.get(`/api/v1/teetimes/${this.state.tee_time_booking.id}/`)
+        axios.get(`/api/v1/teetimes/${this.props.match.params.id}/`)
     }
 
     render() {
