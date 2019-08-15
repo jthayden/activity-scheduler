@@ -38,10 +38,10 @@ class App extends Component {
           </div>
           <Switch>
             <Route exact path='/' render={HomePageComponent}/>
-            <Route path='/golfcourses/create' component={CreateGolfCourse} />
-            <Route path='/golfcourses/:id/teetimes/new' component={CreateTeeTime} />
-            <Route path='/golfcourses/:id' component={GolfCourse} />
-            <Route path='/teetimes/:id' component={TeeTimeBooking} />
+            <Route exact path='/golfcourses/create' component={CreateGolfCourse} />
+            <Route exact path='/golfcourses/:id/teetimes/new' component={CreateTeeTime} />
+            <Route exact path='/golfcourses/:id' component={GolfCourse} />
+            <Route exact path='/teetimes/:id' component={TeeTimeBooking} />
           </Switch>
         </div>
 

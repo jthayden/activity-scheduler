@@ -4,9 +4,10 @@ import { Redirect, Link } from 'react-router-dom'
 
 export default class GolfCourse extends Component {
     state = {
-        golf_course:{},
-        tee_time_bookings:[],
-        golf_lesson_bookings:[],
+        golf_course:{
+            tee_time_bookings:[],
+            golf_lesson_bookings:[],
+        },
         redirectToHome: false,
         isNewTeeTimeBookingFormDisplayed: false,
         newTeeTimeBooking: {
@@ -26,28 +27,27 @@ export default class GolfCourse extends Component {
     }
 
     componentDidMount() {
-        this.getGolfCourse(this.props.match.params.id)
-        this.getRoutes()
-    }
+            axios.get(`/api/v1/golfcourses/${this.props.match.params.id}/`)
+            .then(res => {
+                this.setState({ golf_course: res.data })
+            })
+            axios.get(`/api/v1/teetimes/`).then(res => {
+                this.setState({ tee_time_bookings: res.data })
+            })
+        }
+    
+    
 
-    getGolfCourse = () => {
-        axios.get(`/api/v1/golfcourses/${this.props.match.params.id}/`)
-        .then(res => {
-            this.setState({ golf_course: res.data })
-        })
-    }
+    
 
-    getRoutes = () => {
-        axios.get(`/api/v1/teetimes/`).then(res => {
-            this.setState({ tee_time_bookings: res.data })
-        })
-    }
+    
+        
 
     render() {
-        let teeTimeBookingList = this.state.tee_time_bookings.map((tee_time_booking) => {
+        let teeTimeBookingList = this.state.golf_course.tee_time_bookings.map((tee_time_booking) => {
             return (
                 // <Link>
-                    <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}</p>
+                    <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}{tee_time_booking.course}</p>
                 // </Link>
             )
         })
