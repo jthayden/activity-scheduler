@@ -38,17 +38,17 @@ export default class GolfCourse extends Component {
     }
 
     getRoutes = () => {
-axios.get(`/api/v1/teetimes/`).then(res => {
-    this.setState({ tee_time_bookings: res.data })
-})
+        axios.get(`/api/v1/teetimes/`).then(res => {
+            this.setState({ tee_time_bookings: res.data })
+        })
     }
 
     render() {
         let teeTimeBookingList = this.state.tee_time_bookings.map((tee_time_booking) => {
             return (
-                <Link>
+                // <Link>
                     <p>{tee_time_booking.name}{tee_time_booking.time}{tee_time_booking.guests}{tee_time_booking.carts}</p>
-                </Link>
+                // </Link>
             )
         })
         return (

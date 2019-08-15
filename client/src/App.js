@@ -5,6 +5,7 @@ import TennisComplexList from './components/TennisComplexList'
 import GolfCourse from './components/GolfCourse'
 import CreateGolfCourse from './components/CreateGolfCourse'
 import CreateTeeTime from './components/CreateTeeTime'
+import TeeTimeBooking from './components/TeeTimeBooking'
 import './App.css'
 
 class App extends Component {
@@ -40,6 +41,7 @@ class App extends Component {
             <Route path='/golfcourses/create' component={CreateGolfCourse} />
             <Route path='/golfcourses/:id/teetimes/new' component={CreateTeeTime} />
             <Route path='/golfcourses/:id' component={GolfCourse} />
+            <Route path='/teetimes/:id' component={TeeTimeBooking} />
           </Switch>
         </div>
 
