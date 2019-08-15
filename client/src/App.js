@@ -38,8 +38,8 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={HomePageComponent}/>
             <Route path='/golfcourses/create' component={CreateGolfCourse} />
+            <Route path='/golfcourses/:id/teetimes/new' component={CreateTeeTime} />
             <Route path='/golfcourses/:id' component={GolfCourse} />
-            <Route path='/teetimes/new' component={CreateTeeTime} />
           </Switch>
         </div>
 

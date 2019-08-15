@@ -9,7 +9,7 @@ export default class CreateTeeTime extends Component {
             time:'',
             guests:'',
             carts:'',
-            course: this.props.location.state,
+            course:this.props.match.params.id
         },
         redirectToHome: false
     }

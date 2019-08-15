@@ -52,7 +52,7 @@ export default class GolfCourse extends Component {
                     <p>{this.state.golf_course.description}</p>
                     
                     <h4>Tee Time Bookings</h4>
-                    <Link to='/teetimes/new'>Book a Tee Time</Link>
+                    <Link to={`/golfcourses/${this.props.match.params.id}/teetimes/new`}>Book a Tee Time</Link>
                     {teeTimeBookingList}
                 </div>
             </div>
