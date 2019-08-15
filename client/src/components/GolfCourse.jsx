@@ -27,6 +27,7 @@ export default class GolfCourse extends Component {
 
     componentDidMount() {
         this.getGolfCourse(this.props.match.params.id)
+        this.getRoutes()
     }
 
     getGolfCourse = () => {
@@ -34,6 +35,12 @@ export default class GolfCourse extends Component {
         .then(res => {
             this.setState({ golf_course: res.data })
         })
+    }
+
+    getRoutes = () => {
+axios.get(`/api/v1/teetimes/`).then(res => {
+    this.setState({ tee_time_bookings: res.data })
+})
     }
 
     render() {
@@ -53,7 +60,7 @@ export default class GolfCourse extends Component {
                     
                     <h4>Tee Time Bookings</h4>
                     <Link to={`/golfcourses/${this.props.match.params.id}/teetimes/new`}>Book a Tee Time</Link>
-                    {teeTimeBookingList}
+                    <div>{teeTimeBookingList}</div>
                 </div>
             </div>
         )
