@@ -46,6 +46,15 @@ export default class GolfCourse extends Component {
                 </Link>
             )
         })
+
+        let golfLessonBookingList = this.state.golf_course.golf_lesson_bookings.map((golf_lesson_booking) => {
+            return (
+                <Link to={`/golflessons/${golf_lesson_booking.id}/`}>    
+                <p>{golf_lesson_booking.name}{golf_lesson_booking.time}{golf_lesson_booking.pro}{golf_lesson_booking.course}</p>
+                </Link>
+            )
+        })
+
         return (
             <div>
                 <div>
@@ -56,6 +65,10 @@ export default class GolfCourse extends Component {
                     <h4>Tee Time Bookings</h4>
                     <Link to={`/golfcourses/${this.props.match.params.id}/teetimes/new`}>Book a Tee Time</Link>
                     <div>{teeTimeBookingList}</div>
+
+                    <h4>Golf Lessons</h4>
+                    <Link to={`/golfcourses/${this.props.match.params.id}/golflessons/new`}>Schedule a Golf Lesson</Link>
+                    <div>{golfLessonBookingList}</div>
                 </div>
             </div>
         )
