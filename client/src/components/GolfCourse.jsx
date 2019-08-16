@@ -5,9 +5,10 @@ import { Redirect, Link } from 'react-router-dom'
 export default class GolfCourse extends Component {
     state = {
         golf_course:{
-            tee_time_bookings:[{}],
+            tee_time_bookings:[],
             golf_lesson_bookings:[],
         },
+        
         redirectToHome: false,
         isNewTeeTimeBookingFormDisplayed: false,
         newTeeTimeBooking: {
