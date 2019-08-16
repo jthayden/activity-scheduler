@@ -6,9 +6,8 @@ export default class GolfCourse extends Component {
     state = {
         golf_course:{
             tee_time_bookings:[],
-            golf_lesson_bookings:[],
+            golf_lesson_bookings:[]
         },
-        
         redirectToHome: false,
         isNewTeeTimeBookingFormDisplayed: false,
         newTeeTimeBooking: {
@@ -32,9 +31,9 @@ export default class GolfCourse extends Component {
             .then(res => {
                 this.setState({ golf_course: res.data })
             })
-            axios.get(`/api/v1/teetimes/`).then(res => {
-                this.setState({ tee_time_bookings: res.data })
-            })
+            // axios.get(`/api/v1/teetimes/`).then(res => {
+            //     this.setState({ tee_time_bookings: res.data })
+            // })
         }
     
 
