@@ -7,7 +7,7 @@ router.register('golfcourses', views.GolfCourseView)
 router.register('teetimes', views.TeeTimeBookingView)
 router.register('golflessons', views.GolfLessonBookingView)
 router.register('tenniscomplexes', views.TennisComplexView)
-router.register('courtbooking', views.CourtBookingView)
+router.register('courtbookings', views.CourtBookingView)
 router.register('tennislessons', views.TennisLessonBookingView)
 
 urlpatterns = [

@@ -10,6 +10,7 @@ import CreateGolfLesson from './components/CreateGolfLesson'
 import GolfLessonBooking from './components/GolfLessonBooking'
 import CreateTennisComplex from './components/CreateTennisComplex'
 import TennisComplex from './components/TennisComplex'
+import CreateCourtBooking from './components/CreateCourtBooking'
 import './App.css'
 
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
             <Route exact path='/golflessons/:id' component={GolfLessonBooking} />
             <Route exact path='/tenniscomplexes/create' component={CreateTennisComplex} />
             <Route exact path='/tenniscomplexes/:id' component={TennisComplex} />
+            <Route exact path='/tenniscomplexes/:id/courtbookings/new' component={CreateCourtBooking} />
           </Switch>
         </div>
 

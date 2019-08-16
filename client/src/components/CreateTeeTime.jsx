@@ -76,7 +76,6 @@ export default class CreateTeeTime extends Component {
                             value='Book Tee Time'
                         />
                     </div>
-
                 </form>
             </div>
         )
