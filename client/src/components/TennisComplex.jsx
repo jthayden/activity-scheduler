@@ -36,7 +36,7 @@ export default class TennisComplex extends Component {
         let courtBookingList = this.state.tennis_complex.court_bookings.map((court_booking) => {
             return (
                 <Link to={`/courtbookings/${court_booking.id}/`}>
-                    <p>{court_booking.name}{court_booking.time}{court_booking.pro}{court_booking.guests}{court_booking.tennis_complex}</p>
+                    <p>{court_booking.name}{court_booking.time}{court_booking.pro}{court_booking.guests}{court_booking.court_type}{court_booking.tennis_complex}</p>
                 </Link>
             )
         })
