@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 export default class TennisComplexList extends Component {
     state = {
@@ -24,16 +24,19 @@ getAllTennisComplexes = () => {
     render() {
         let tennisComplexList = this.state.tennis_complexes.map((tennis_complex) => {
             return (
+                <Link to={`/tenniscomplexes/${tennis_complex.id}`}>
                 <div>
                     <img src={tennis_complex.photo_url} alt={tennis_complex.name} />
                     <h2>{tennis_complex.name}</h2>
                     <p>{tennis_complex.description}</p>
                 </div>
+                </Link>
             )
         })
         return (
             <div>
                 {tennisComplexList}
+                <Link to={'/tenniscomplexes/create'}>Add Tennis Complex</Link>
             </div>
         )
     }

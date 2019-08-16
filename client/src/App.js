@@ -8,6 +8,7 @@ import CreateTeeTime from './components/CreateTeeTime'
 import TeeTimeBooking from './components/TeeTimeBooking'
 import CreateGolfLesson from './components/CreateGolfLesson'
 import GolfLessonBooking from './components/GolfLessonBooking'
+import CreateTennisComplex from './components/CreateTennisComplex'
 import './App.css'
 
 class App extends Component {
@@ -46,6 +47,7 @@ class App extends Component {
             <Route exact path='/teetimes/:id' component={TeeTimeBooking} />
             <Route exact path='/golfcourses/:id/golflessons/new' component={CreateGolfLesson} />
             <Route exact path='/golflessons/:id' component={GolfLessonBooking} />
+            <Route exact path='/tenniscomplexes/create' component={CreateTennisComplex} />
           </Switch>
         </div>
 
