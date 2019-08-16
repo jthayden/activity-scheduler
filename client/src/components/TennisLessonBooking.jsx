@@ -37,7 +37,7 @@ export default class TennisLessonBooking extends Component {
         evt.preventDefault()
         axios.put(`/api/v1/tennislessons/${this.state.tennis_lesson_booking.id}/`, this.state.tennis_lesson_booking).then(() => {
             this.setState({
-                redirectToHome:true
+                isEditTennisLessonBookingFormDisplayed:false
             })
         })
     }
@@ -50,7 +50,7 @@ export default class TennisLessonBooking extends Component {
 
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to={`/tenniscomplexes/${this.state.tennis_lesson_booking.tennis_complex}/`} />
         }
 
         return (

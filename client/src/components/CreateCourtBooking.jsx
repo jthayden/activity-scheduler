@@ -31,7 +31,7 @@ export default class CreateCourtBooking extends Component {
 
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to={`/tenniscomplexes/${this.props.match.params.id}/`} />
         }
         
         return (

@@ -49,7 +49,7 @@ export default class TeeTimeBooking extends Component {
         )
         .then(() => {
             this.setState({
-            redirectToHome: true
+            isEditTeeTimeBookingFormDisplayed:false
             });
         });
     };
@@ -62,7 +62,7 @@ export default class TeeTimeBooking extends Component {
 
     render() {
         if (this.state.redirectToHome) {
-        return <Redirect to="/" />;
+        return <Redirect to={`/golfcourses/${this.state.tee_time_booking.course}/`} />;
         }
 
         return (

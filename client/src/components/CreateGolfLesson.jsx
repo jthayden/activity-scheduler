@@ -30,7 +30,7 @@ export default class CreateGolfLesson extends Component {
 
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to={`/golfcourses/${this.props.match.params.id}/`} />
         }
 
         return (

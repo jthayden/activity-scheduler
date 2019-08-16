@@ -51,7 +51,7 @@ export default class GolfLesson extends Component {
         )
         .then(() => {
             this.setState({
-            redirectToHome: true
+            isEditGolfLessonBookingFormDisplayed: false
             });
         });
     };
@@ -64,7 +64,7 @@ export default class GolfLesson extends Component {
 
     render() {
         if (this.state.redirectToHome) {
-        return <Redirect to="/" />;
+        return <Redirect to={`/golfcourses/${this.state.golf_lesson_booking.course}/`} />;
         }
         return (
         <div>

@@ -30,7 +30,7 @@ export default class CreateTennisLesson extends Component {
 
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to={`/tenniscomplexes/${this.props.match.params.id}/`} />
         }
 
         return (

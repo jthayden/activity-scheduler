@@ -37,7 +37,7 @@ export default class CourtBooking extends Component {
         evt.preventDefault()
         axios.put(`/api/v1/courtbookings/${this.state.court_booking.id}/`, this.state.court_booking).then(() => {
             this.setState({
-                redirectToHome:true
+                isEditCourtBookingFormDisplayed:false
             })
         })
     }
@@ -50,7 +50,7 @@ export default class CourtBooking extends Component {
 
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to={`/tenniscomplexes/${this.state.court_booking.tennis_complex}/`} />
         }
 
         return (
