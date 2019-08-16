@@ -1,122 +1,125 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import { Redirect, Link } from 'react-router-dom'
+import React, { Component } from "react";
+import axios from "axios";
+import { Redirect, Link } from "react-router-dom";
 
 export default class TeeTimeBooking extends Component {
-    state = {
-        tee_time_booking: {},
-        redirectToHome: false,
-        isEditTeeTimeBookingFormDisplayed: false
-    }
+  state = {
+    tee_time_booking: {},
+    redirectToHome: false,
+    isEditTeeTimeBookingFormDisplayed: false
+  };
 
-    componentDidMount() {
-        axios.get(`/api/v1/teetimes/${this.props.match.params.id}/`)
-        .then(res => {
-            this.setState({
-                tee_time_booking: res.data
-            })
-        })
-    }
+  componentDidMount() {
+    axios.get(`/api/v1/teetimes/${this.props.match.params.id}/`).then(res => {
+      this.setState({
+        tee_time_booking: res.data
+      });
+    });
+  }
 
-    handleDeleteTeeTimeBooking = () => {
-        axios.delete(`/api/v1/teetimes/${this.props.match.params.id}/`, this.state.tee_time_booking)
-            .then(() => {
-                this.setState({
-                    redirectToHome:true
-                })
-            })
-    }
-
-    handleInputChange = (evt) => {
-        let copiedTeeTimeBooking = {...this.state.tee_time_booking}
-
-        copiedTeeTimeBooking[evt.target.name] = evt.target.value
+  handleDeleteTeeTimeBooking = () => {
+    axios
+      .delete(
+        `/api/v1/teetimes/${this.props.match.params.id}/`,
+        this.state.tee_time_booking
+      )
+      .then(() => {
         this.setState({
-            tee_time_booking: copiedTeeTimeBooking
-        })
-    }
+          redirectToHome: true
+        });
+      });
+  };
 
-    handleSubmit = (evt) => {
-        evt.preventDefault()
+  handleInputChange = evt => {
+    let copiedTeeTimeBooking = { ...this.state.tee_time_booking };
 
-        axios.put(`/api/v1/teetimes/${this.state.tee_time_booking.id}/`, this.state.tee_time_booking)
-            .then(() => {
-                this.setState({
-                    redirectToHome:true
-                })
-            })
-    }
+    copiedTeeTimeBooking[evt.target.name] = evt.target.value;
+    this.setState({
+      tee_time_booking: copiedTeeTimeBooking
+    });
+  };
 
-    toggleEditTeeTimeBookingForm = () => {
+  handleSubmit = evt => {
+    evt.preventDefault();
+
+    axios
+      .put(
+        `/api/v1/teetimes/${this.state.tee_time_booking.id}/`,
+        this.state.tee_time_booking
+      )
+      .then(() => {
         this.setState({
-            isEditTeeTimeBookingFormDisplayed: true
-        })
+          redirectToHome: true
+        });
+      });
+  };
+
+  toggleEditTeeTimeBookingForm = () => {
+    this.setState({
+      isEditTeeTimeBookingFormDisplayed: true
+    });
+  };
+
+  render() {
+    if (this.state.redirectToHome) {
+      return <Redirect to="/" />;
     }
 
+    return (
+      <div>
+        {this.state.isEditTeeTimeBookingFormDisplayed ? (
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="tee-time-name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="tee-time-name"
+              onChange={this.handleInputChange}
+              value={this.state.tee_time_booking.name}
+            />
+            <label htmlFor="tee-time-time">Time</label>
+            <input
+              type="text"
+              name="time"
+              id="tee-time-time"
+              onChange={this.handleInputChange}
+              value={this.state.tee_time_booking.time}
+            />
+            <label htmlFor="tee-time-guests">Guest(s)</label>
+            <input
+              type="text"
+              name="guests"
+              id="tee-time-guests"
+              onChange={this.handleInputChange}
+              value={this.state.tee_time_booking.guests}
+            />
+            <label htmlFor="tee-time-carts">Cart(s)</label>
+            <input
+              type="text"
+              name="carts"
+              id="tee-time-carts"
+              onChange={this.handleInputChange}
+              value={this.state.tee_time_booking.carts}
+            />
+            <input type="submit" value="Update Tee Time" />
+          </form>
+        ) : (
+          <div>
+            <h5>Name: {this.state.tee_time_booking.name}</h5>
+            <h5>Time: {this.state.tee_time_booking.time}</h5>
+            <h5>Guests: {this.state.tee_time_booking.guests}</h5>
+            <h5>Carts: {this.state.tee_time_booking.carts}</h5>
+            {/* <h5>Course: {this.state.tee_time_booking.course}</h5> */}
 
-    render() {
-        if(this.state.redirectToHome) {
-            return <Redirect to='/' />
-        }
-
-        return (
-            <div>
-                {
-                    this.state.isEditTeeTimeBookingFormDisplayed
-                    ? <form onSubmit={this.handleSubmit}>
-                        <label htmlFor='tee-time-name'>Name</label>
-                        <input 
-                            type='text'
-                            name='name'
-                            id='tee-time-name'
-                            onChange={this.handleInputChange}
-                            value={this.state.tee_time_booking.name}
-                        />
-                        <label htmlFor='tee-time-time'>Time</label>
-                        <input 
-                            type='text'
-                            name='time'
-                            id='tee-time-time'
-                            onChange={this.handleInputChange}
-                            value={this.state.tee_time_booking.time}
-                        />
-                        <label htmlFor='tee-time-guests'>Guest(s)</label>
-                        <input 
-                            type='text'
-                            name='guests'
-                            id='tee-time-guests'
-                            onChange={this.handleInputChange}
-                            value={this.state.tee_time_booking.guests}
-                        />
-                        <label htmlFor='tee-time-carts'>Cart(s)</label>
-                        <input 
-                            type='text'
-                            name='carts'
-                            id='tee-time-carts'
-                            onChange={this.handleInputChange}
-                            value={this.state.tee_time_booking.carts}
-                        />
-                        <input 
-                            type='submit'
-                            value='Update Tee Time'
-                        />
-
-                    </form>
-                    :
-                    <div>
-                        <h5>Name: {this.state.tee_time_booking.name}</h5>
-                <h5>Time: {this.state.tee_time_booking.time}</h5>
-                <h5>Guests: {this.state.tee_time_booking.guests}</h5>
-                <h5>Carts: {this.state.tee_time_booking.carts}</h5>
-                {/* <h5>Course: {this.state.tee_time_booking.course}</h5> */}
-
-                <button onClick={this.toggleEditTeeTimeBookingForm}>Edit Tee Time</button>
-                <button onClick={this.handleDeleteTeeTimeBooking}>Delete Tee Time</button>
-                </div>
-                }
-
-                
-            </div>
-        )
-    }
+            <button onClick={this.toggleEditTeeTimeBookingForm}>
+              Edit Tee Time
+            </button>
+            <button onClick={this.handleDeleteTeeTimeBooking}>
+              Delete Tee Time
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
