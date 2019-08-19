@@ -14,6 +14,7 @@ import CreateCourtBooking from './components/CreateCourtBooking'
 import CourtBooking from './components/CourtBooking'
 import TennisLessonBooking from './components/TennisLessonBooking'
 import CreateTennisLesson from './components/CreateTennisLesson'
+import Navbar from './components/Navbar'
 import './App.css'
 
 class App extends Component {
@@ -33,9 +34,10 @@ class App extends Component {
     return (
       <Router>
         <div className='navbar'>
-          <Link className='navbar-link' to=''>Golf</Link>
+          <Navbar />
+          {/* <Link className='navbar-link' to=''>Golf</Link>
           <Link className='navbar-link' to=''>Tennis</Link>  
-          <Link className='navbar-link' to=''>Login</Link>
+          <Link className='navbar-link' to=''>Login</Link> */}
         </div>
         <div className='App'>
           <div>
@@ -58,6 +60,7 @@ class App extends Component {
             <Route exact path='/courtbookings/:id' component={CourtBooking}/>
             <Route exact path='/tennislessons/:id' component={TennisLessonBooking} />
             <Route exact path='/tenniscomplexes/:id/tennislessons/new' component={CreateTennisLesson} />
+            <Route exact path='/navbar/' component={Navbar} />
           </Switch>
         </div>
 
