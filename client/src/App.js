@@ -42,9 +42,9 @@ class App extends Component {
         <div className='App'>
           <div>
             <h1>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
-            <div>
+            {/* <div>
               <div><Link to='/'>Home</Link></div>
-            </div>
+            </div> */}
           </div>
           <Switch>
             <Route exact path='/' render={HomePageComponent}/>
