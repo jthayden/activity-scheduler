@@ -27,3 +27,15 @@ p {
 .navbar-link {
   margin: 25px;
 }
+
+.card {
+  width: 400px;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.root {
+  width: 75%;
+}
