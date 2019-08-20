@@ -8,7 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import SendIcon from "@material-ui/icons/Send";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import GolfCourseIcon from "@material-ui/icons/GolfCourse";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
@@ -74,19 +74,19 @@ export default function CustomizedMenus() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-            <StyledMenuItem component={Link} to="/">
+            <StyledMenuItem component={Link} to="/" onClick={handleClose}>
             <ListItemIcon>
                 <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
             </StyledMenuItem>
-            <StyledMenuItem component={Link} to="/">
+            <StyledMenuItem component='a' href="#anchor-golf-courses" onClick={handleClose}>
             <ListItemIcon>
                 <GolfCourseIcon />
             </ListItemIcon>
             <ListItemText primary="Golf" />
             </StyledMenuItem>
-            <StyledMenuItem component={Link} to="/">
+            <StyledMenuItem component='a' href="#anchor-tennis-complexes" onClick={handleClose}>
             <ListItemIcon>
                 <img
                 src="https://i.imgur.com/dMTwYfe.png"

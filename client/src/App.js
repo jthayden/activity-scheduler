@@ -16,15 +16,18 @@ import TennisLessonBooking from './components/TennisLessonBooking'
 import CreateTennisLesson from './components/CreateTennisLesson'
 import Navbar from './components/Navbar'
 import './App.css'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 class App extends Component {
   render() {
     let HomePageComponent = () => {
       return (
         <div> 
-          <h2>Golf Courses</h2>
+          <h2><a id='anchor-golf-courses'>Golf Courses</a></h2>
           <GolfCourseList />
-          <h2>Tennis Complexes</h2>
+          <h2><a id='anchor-tennis-complexes'>Tennis Complexes</a></h2>
           <TennisComplexList />
         </div>
       )
@@ -39,6 +42,8 @@ class App extends Component {
           <Link className='navbar-link' to=''>Tennis</Link>  
           <Link className='navbar-link' to=''>Login</Link> */}
         </div>
+        <Container maxWidth="md">
+        <Typography component="div" style={{ height: '100vh' }}>
         <div className='App'>
           <div>
             <h1>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
@@ -63,7 +68,8 @@ class App extends Component {
             <Route exact path='/navbar/' component={Navbar} />
           </Switch>
         </div>
-
+        </Typography>
+        </Container>
       </Router>
     )
   }
