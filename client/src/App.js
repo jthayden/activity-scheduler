@@ -46,7 +46,7 @@ class App extends Component {
         <Typography component="div" style={{ height: '100vh' }}>
         <div className='App'>
           <div>
-            <h1>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
+            <h1 id='main-heading'>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
             {/* <div>
               <div><Link to='/'>Home</Link></div>
             </div> */}

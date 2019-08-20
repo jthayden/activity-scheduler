@@ -21,7 +21,8 @@ p {
 }
 
 .navbar {
-  display: flex;
+  position: fixed;
+  top: 0;
 }
 
 .navbar-link {
@@ -38,4 +39,13 @@ p {
 
 .root {
   width: 75%;
+}
+
+Button.NavButton {
+  background-color: green;
+  color: white;
+}
+
+Button.NavButton:hover {
+  background-color: darkgreen;
 }
