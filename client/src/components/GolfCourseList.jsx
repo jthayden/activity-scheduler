@@ -41,7 +41,7 @@ export default class GolfCourseList extends Component {
                 <Button href="#The Oconee" className=''>The Oconee</Button>
                 <Button href="#Great Waters" className=''>Great Waters</Button>
                 <Button href="#The National" className=''>The National</Button>
-                <Button href="#Creek Club" className=''> Creek Club</Button>
+                <Button href="#The Creek Club" className=''> The Creek Club</Button>
                 <Button href="#The Landing" className=''>The Landing</Button>
 
                 {golfCourseList}
