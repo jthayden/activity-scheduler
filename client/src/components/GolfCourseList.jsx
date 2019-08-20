@@ -50,15 +50,6 @@ export default class GolfCourseList extends Component {
                 <p>{golf_course.description}</p>
                 
                 <hr />
-                
-                
-                {/* <Link to={`/golfcourses/${golf_course.id}`}>
-                <div id={golf_course.name}>
-                    <img src={golf_course.photo_url} alt={golf_course.name} />
-                    <h2>{golf_course.name}</h2>
-                    <p>{golf_course.description}</p>
-                </div>
-                </Link> */}
                 </div>
             )
         })
