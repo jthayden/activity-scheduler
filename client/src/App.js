@@ -37,19 +37,13 @@ class App extends Component {
     return (
       <Router>
         <div className='navbar'>
-          <Navbar />
-          {/* <Link className='navbar-link' to=''>Golf</Link>
-          <Link className='navbar-link' to=''>Tennis</Link>  
-          <Link className='navbar-link' to=''>Login</Link> */}
-        </div>
+            <Navbar />
+          </div>
         <Container maxWidth="md">
         <Typography component="div" style={{ height: '100vh' }}>
         <div className='App'>
           <div>
             <h1 id='main-heading'>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
-            {/* <div>
-              <div><Link to='/'>Home</Link></div>
-            </div> */}
           </div>
           <Switch>
             <Route exact path='/' render={HomePageComponent}/>
