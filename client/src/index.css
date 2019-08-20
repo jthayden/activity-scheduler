@@ -53,3 +53,82 @@ Button.NavButton:hover {
 #main-heading {
   margin: 65px;
 }
+
+.image {
+  position: relative;
+  max-height: 300px;
+}
+
+.image:hover {
+  z-index: 1;
+  opacity: .55;
+  
+}
+
+
+
+.MuiTypography-root.imageTitle.MuiTypography-body1 {
+  font-size: 33px;
+}
+
+.imageButton {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 40px; */
+  color: white;
+  /* text-decoration-line: none; */
+  
+}
+
+
+
+/* .imageSrc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+} */
+
+/* .imageBackdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: .4;
+} */
+
+.imageTitle {
+  position: relative;
+  color: white;
+  text-decoration-line: none;
+  /* font-size: 50px; */
+}
+
+.imageTitle:hover {
+  border: 4px solid white;
+}
+
+.imageButton a {
+  width: 300px;
+  text-decoration-line: none;
+}
+
+hr {
+  border-width: 1px;
+  border-style: solid;
+  margin-top:1.5em;
+  margin-bottom:1.5em;
+  margin-left:2.5em;
+  margin-right:2.5em;
+  color: darkgray;
+}
