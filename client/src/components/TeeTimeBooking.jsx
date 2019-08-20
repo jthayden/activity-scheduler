@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import IconButton from '@material-ui/core/IconButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class TeeTimeBooking extends Component {
     state = {
@@ -115,6 +118,7 @@ export default class TeeTimeBooking extends Component {
             </form>
             ) : (
             <div>
+                <Link to={`/golfcourses/${this.state.tee_time_booking.course}/`}><IconButton aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton></Link>
                 <h5>Name: {this.state.tee_time_booking.name}</h5>
                 <h5>Time: {this.state.tee_time_booking.time}</h5>
                 <h5>Guests: {this.state.tee_time_booking.guests}</h5>
