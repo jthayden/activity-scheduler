@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
 export default class CreateTennisLesson extends Component {
     state = {
@@ -68,10 +69,11 @@ export default class CreateTennisLesson extends Component {
                             value={this.state.new_tennis_lesson.pro}
                         />
                         </div>
-                        <input 
+                        <Button type='submit' color='primary'>Schedule Tennis Lesson</Button>
+                        {/* <input 
                             type="submit"
                             value='Schedule Tennis Lesson'
-                        />
+                        /> */}
                     </div>
                 </form>
             </div>

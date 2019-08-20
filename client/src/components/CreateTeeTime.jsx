@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 export default class CreateTeeTime extends Component {
     state = {
@@ -80,10 +82,10 @@ export default class CreateTeeTime extends Component {
                             value={this.state.new_tee_time.carts}
                         />
                         </div>
-                        <input 
-                            type='submit'
-                            value='Book Tee Time'
-                        />
+                        <Button color="primary"     className=''type='submit'>Book Tee Time
+                        </Button>
+                        
+                       
                     </div>
                 </form>
             </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
+import Button from '@material-ui/core/Button'
 
 export default class GolfLesson extends Component {
     state = {
@@ -70,6 +71,7 @@ export default class GolfLesson extends Component {
         <div>
             {this.state.isEditGolfLessonBookingFormDisplayed ? (
             <form onSubmit={this.handleSubmit}>
+                <div>
                 <label htmlFor="golf-lesson-name">Name</label>
                 <input
                 type="text"
@@ -78,6 +80,8 @@ export default class GolfLesson extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.golf_lesson_booking.name}
                 />
+                </div>
+                <div>
                 <label htmlFor="golf-lesson-time">Time</label>
                 <input
                 type="text"
@@ -86,6 +90,8 @@ export default class GolfLesson extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.golf_lesson_booking.time}
                 />
+                </div>
+                <div>
                 <label htmlFor="golf-lesson-pro">Pro</label>
                 <input
                 type="text"
@@ -94,7 +100,9 @@ export default class GolfLesson extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.golf_lesson_booking.pro}
                 />
-                <input type="submit" value="Update Golf Lesson" />
+                </div>
+                <Button type='submit' color='primary'>Update Golf Lesson</Button>
+                {/* <input type="submit" value="Update Golf Lesson" /> */}
             </form>
             ) : (
             <div>
@@ -102,12 +110,12 @@ export default class GolfLesson extends Component {
                 <h5>Time: {this.state.golf_lesson_booking.time}</h5>
                 <h5>Pro: {this.state.golf_lesson_booking.pro}</h5>
 
-                <button onClick={this.toggleEditGolfLessonBookingForm}>
+                <Button color='primary' onClick={this.toggleEditGolfLessonBookingForm}>
                 Edit Golf Lesson
-                </button>
-                <button onClick={this.handleDeleteGolfLessonBooking}>
+                </Button>
+                <Button color='secondary' onClick={this.handleDeleteGolfLessonBooking}>
                 Delete Golf Lesson
-                </button>
+                </Button>
             </div>
             )}
         </div>

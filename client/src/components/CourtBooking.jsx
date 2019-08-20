@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
 export default class CourtBooking extends Component {
     state = {
@@ -59,6 +60,7 @@ export default class CourtBooking extends Component {
                     this.state.isEditCourtBookingFormDisplayed
                     ? (
                     <form onSubmit={this.handleSubmit}>
+                        <div>
                         <label htmlFor="court-booking-name">Name</label>
                         <input 
                             type="text"
@@ -67,6 +69,8 @@ export default class CourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.name}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="court-booking-time">Time</label>
                         <input 
                             type="text"
@@ -75,6 +79,8 @@ export default class CourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.time}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="court-booking-court-type">Court Type</label>
                         <input 
                             type="text"
@@ -83,6 +89,8 @@ export default class CourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.court_type}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="court-booking-guests">Guests</label>
                         <input 
                             type="text"
@@ -91,7 +99,9 @@ export default class CourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.guests}
                         />
-                        <input type='submit' value='Update Court Reservation'/>
+                        </div>
+                        <Button type='submit' color='primary'>Update Court Reservation</Button>
+                        {/* <input type='submit' value='Update Court Reservation'/> */}
                     </form>
                     ) : (
                         <div>
@@ -100,10 +110,10 @@ export default class CourtBooking extends Component {
                             <h5>Court Type: {this.state.court_booking.court_type}</h5>
                             <h5>Guests: {this.state.court_booking.guests}</h5>
 
-                            <button onClick={this.toggleEditCourtBookingForm}>Edit Court Reservation</button>
-                            <button onClick={this.handleDeleteCourtBooking}>
+                            <Button color='primary' onClick={this.toggleEditCourtBookingForm}>Edit Court Reservation</Button>
+                            <Button color='secondary' onClick={this.handleDeleteCourtBooking}>
                                 Delete Court Reservation
-                            </button>
+                            </Button>
                         </div>
                     )
                 }

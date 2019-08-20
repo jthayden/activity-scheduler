@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
 export default class CreateCourtBooking extends Component {
     state = {
@@ -79,10 +80,11 @@ export default class CreateCourtBooking extends Component {
                             value={this.state.new_court_booking.guests}
                         />
                         </div>
-                        <input 
+                        <Button type='submit' color='primary'>Reserve Court</Button>
+                        {/* <input 
                             type="submit"
                             value='Reserve Court'
-                        />
+                        /> */}
                     </div>
                 </form>
             </div>

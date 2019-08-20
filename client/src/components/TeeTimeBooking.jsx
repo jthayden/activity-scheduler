@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
+import Button from '@material-ui/core/Button'
 
 export default class TeeTimeBooking extends Component {
     state = {
@@ -69,6 +70,7 @@ export default class TeeTimeBooking extends Component {
         <div>
             {this.state.isEditTeeTimeBookingFormDisplayed ? (
             <form onSubmit={this.handleSubmit}>
+                <div>
                 <label htmlFor="tee-time-name">Name</label>
                 <input
                 type="text"
@@ -77,6 +79,8 @@ export default class TeeTimeBooking extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.name}
                 />
+                </div>
+                <div>
                 <label htmlFor="tee-time-time">Time</label>
                 <input
                 type="text"
@@ -85,6 +89,8 @@ export default class TeeTimeBooking extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.time}
                 />
+                </div>
+                <div>
                 <label htmlFor="tee-time-guests">Guest(s)</label>
                 <input
                 type="text"
@@ -93,6 +99,8 @@ export default class TeeTimeBooking extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.guests}
                 />
+                </div>
+                <div>
                 <label htmlFor="tee-time-carts">Cart(s)</label>
                 <input
                 type="text"
@@ -101,7 +109,9 @@ export default class TeeTimeBooking extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.carts}
                 />
-                <input type="submit" value="Update Tee Time" />
+                </div>
+                <Button type='submit' color='primary'>Update Tee Time</Button>
+                {/* <input type="submit" value="Update Tee Time" /> */}
             </form>
             ) : (
             <div>
@@ -111,12 +121,12 @@ export default class TeeTimeBooking extends Component {
                 <h5>Carts: {this.state.tee_time_booking.carts}</h5>
                 {/* <h5>Course: {this.state.tee_time_booking.course}</h5> */}
 
-                <button onClick={this.toggleEditTeeTimeBookingForm}>
+                <Button onClick={this.toggleEditTeeTimeBookingForm} color='primary'>
                 Edit Tee Time
-                </button>
-                <button onClick={this.handleDeleteTeeTimeBooking}>
+                </Button>
+                <Button color='secondary' onClick={this.handleDeleteTeeTimeBooking}>
                 Delete Tee Time
-                </button>
+                </Button>
             </div>
             )}
         </div>

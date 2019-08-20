@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
 export default class TennisLessonBooking extends Component {
     state = {
@@ -57,6 +58,7 @@ export default class TennisLessonBooking extends Component {
             <div>
                 {this.state.isEditTennisLessonBookingFormDisplayed ?(
                     <form onSubmit={this.handleSubmit}>
+                        <div>
                         <label htmlFor="tennis-lesson-name">Name</label>
                         <input 
                             type="text"
@@ -65,6 +67,8 @@ export default class TennisLessonBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.tennis_lesson_booking.name}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="tennis-lesson-time">Time</label>
                         <input 
                             type="text"
@@ -73,6 +77,8 @@ export default class TennisLessonBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.tennis_lesson_booking.time}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="tennis-lesson-pro">Pro</label>
                         <input 
                             type="text"
@@ -81,7 +87,9 @@ export default class TennisLessonBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.tennis_lesson_booking.pro}
                         />
-                        <input type="submit" value='Update Tennis Lesson'/>
+                        </div>
+                        <Button type='submit' color='primary'>Update Tennis Lesson</Button>
+                        {/* <input type="submit" value='Update Tennis Lesson'/> */}
                     </form>
                 ) : (
                     <div>
@@ -89,8 +97,8 @@ export default class TennisLessonBooking extends Component {
                         <h5>Time: {this.state.tennis_lesson_booking.time}</h5>
                         <h5>Pro: {this.state.tennis_lesson_booking.pro}</h5>
                     
-                        <button onClick={this.toggleEditTennisLessonBookingForm}>Edit Tennis Lesson</button>
-                        <button onClick={this.handleDeleteTennisLessonBooking}>Delete Tennis Lesson</button>
+                        <Button color='primary' onClick={this.toggleEditTennisLessonBookingForm}>Edit Tennis Lesson</Button>
+                        <Button color='secondary' onClick={this.handleDeleteTennisLessonBooking}>Delete Tennis Lesson</Button>
                     </div>
                 
                 )}
