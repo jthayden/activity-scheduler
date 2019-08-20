@@ -25,11 +25,9 @@ p {
   flex-direction: row-reverse;
   position: fixed;
   top: 0;
-  margin: 25px 0px;
+  margin: 25px -25px;
   width: 100%;
 }
-
-
 
 .card {
   width: 400px;
@@ -52,3 +50,6 @@ Button.NavButton:hover {
   background-color: darkgreen;
 }
 
+#main-heading {
+  margin: 65px;
+}

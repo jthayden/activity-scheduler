@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import TextField from '@material-ui/core/TextField'
 
 export default class CreateTeeTime extends Component {
     state = {
@@ -39,6 +40,7 @@ export default class CreateTeeTime extends Component {
                 <h2>Book Tee Time</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <div>
                         <label htmlFor='new-tee-time-name'>Name</label>
                         <input 
                             type='text'
@@ -47,6 +49,8 @@ export default class CreateTeeTime extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_tee_time.name}
                         />
+                        </div>
+                        <div>
                         <label htmlFor='new-tee-time-time'>Time</label>
                         <input 
                             type='text'
@@ -55,6 +59,8 @@ export default class CreateTeeTime extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_tee_time.time}
                         />
+                        </div>
+                        <div>
                         <label htmlFor='new-tee-time-guests'>Guest(s)</label>
                         <input 
                             type='text'
@@ -63,6 +69,8 @@ export default class CreateTeeTime extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_tee_time.guests}
                         />
+                        </div>
+                        <div>
                         <label htmlFor='new-tee-time-carts'>Cart(s)</label>
                         <input 
                             type='text'
@@ -71,6 +79,7 @@ export default class CreateTeeTime extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_tee_time.carts}
                         />
+                        </div>
                         <input 
                             type='submit'
                             value='Book Tee Time'

@@ -39,6 +39,7 @@ export default class CreateCourtBooking extends Component {
                 <h2>Reserve Court</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <div>
                         <label htmlFor="new-court-booking-name">Name</label>
                         <input 
                             type="text"
@@ -47,6 +48,8 @@ export default class CreateCourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_court_booking.name}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="new-court-booking-time">Time</label>
                         <input 
                             type="text"
@@ -55,6 +58,8 @@ export default class CreateCourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_court_booking.time}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="new-court-booking-court-type">Court Type</label>
                         <input 
                             type="text"
@@ -63,6 +68,8 @@ export default class CreateCourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_court_booking.court_type}
                         />
+                        </div>
+                        <div>
                         <label htmlFor="new-court-booking-guests">Guests</label>
                         <input 
                             type="text"
@@ -71,6 +78,7 @@ export default class CreateCourtBooking extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_court_booking.guests}
                         />
+                        </div>
                         <input 
                             type="submit"
                             value='Reserve Court'

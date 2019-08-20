@@ -38,6 +38,7 @@ export default class CreateGolfLesson extends Component {
                 <h2>Schedule Golf Lesson</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <div>
                         <label htmlFor='new-golf-lesson-name'>Name</label>
                         <input 
                             type='text'
@@ -46,6 +47,8 @@ export default class CreateGolfLesson extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_golf_lesson.name.name}
                         />
+                        </div>
+                        <div>
                         <label htmlFor='new-golf-lesson-time'>Time</label>
                         <input 
                             type='text'
@@ -54,6 +57,8 @@ export default class CreateGolfLesson extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_golf_lesson.time}
                         />
+                        </div>
+                        <div>
                         <label htmlFor='new-golf-lesson-pro'>Pro</label>
                         <input 
                             type='text'
@@ -62,6 +67,7 @@ export default class CreateGolfLesson extends Component {
                             onChange={this.handleInputChange}
                             value={this.state.new_golf_lesson.pro}
                         />
+                        </div>
                         <input 
                             type='submit'
                             value='Schedule Golf Lesson'
