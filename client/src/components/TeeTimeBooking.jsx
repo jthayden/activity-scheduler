@@ -64,6 +64,12 @@ export default class TeeTimeBooking extends Component {
         });
     };
 
+    toggleEditFormOff = () => {
+        this.setState({
+            isEditTeeTimeBookingFormDisplayed:false
+        })
+    }
+
     render() {
         if (this.state.redirectToHome) {
         return <Redirect to={`/golfcourses/${this.state.tee_time_booking.course}/`} />;
@@ -71,8 +77,12 @@ export default class TeeTimeBooking extends Component {
 
         return (
         <div>
+            
             {this.state.isEditTeeTimeBookingFormDisplayed ? (
-            <form onSubmit={this.handleSubmit}>
+                <div>
+                <IconButton onClick={this.toggleEditFormOff} aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton>
+                
+                <form onSubmit={this.handleSubmit}>
                 <div>
                 <label htmlFor="tee-time-name">Name</label>
                 <input
@@ -116,9 +126,11 @@ export default class TeeTimeBooking extends Component {
                 <Button type='submit' color='primary'>Update Tee Time</Button>
                 {/* <input type="submit" value="Update Tee Time" /> */}
             </form>
+            </div>
             ) : (
             <div>
                 <Link to={`/golfcourses/${this.state.tee_time_booking.course}/`}><IconButton aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton></Link>
+                <h3>Tee Time</h3>
                 <h5>Name: {this.state.tee_time_booking.name}</h5>
                 <h5>Time: {this.state.tee_time_booking.time}</h5>
                 <h5>Guests: {this.state.tee_time_booking.guests}</h5>
