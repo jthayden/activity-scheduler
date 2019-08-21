@@ -75,7 +75,7 @@ export default function CustomizedMenus() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-            <StyledMenuItem component='a' href="/#main-heading" onClick={handleClose}>
+            <StyledMenuItem component='a' href="/#anchor-hero-image" onClick={handleClose}>
             <ListItemIcon>
                 <HomeIcon />
             </ListItemIcon>

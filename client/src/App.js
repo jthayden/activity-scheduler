@@ -43,6 +43,7 @@ class App extends Component {
         <Typography component="div" style={{ height: '100vh' }}>
         <div className='App'>
           <div>
+            <a id='anchor-hero-image'></a>
             <img className='hero-image' src='https://i.imgur.com/IOACCpWh.png' alt='Reynolds'/>
             <h1 id='main-heading'>Golf & Tennis Scheduler</h1>
           </div>
