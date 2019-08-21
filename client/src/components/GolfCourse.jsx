@@ -113,13 +113,13 @@ export default class GolfCourse extends Component {
                     <h2>{this.state.golf_course.name}</h2>
                     <p>{this.state.golf_course.description}</p>
                     
-                    <h4>Tee Time Bookings</h4>
+                    <h3>Tee Time Bookings</h3>
                     <Link to={`/golfcourses/${this.props.match.params.id}/teetimes/new`}><Button size='medium' color='primary'>Book a Tee Time</Button></Link>
                     <div className='booking-list'>
                     {teeTimeBookingList}
                     </div>
 
-                    <h4>Golf Lessons</h4>
+                    <h3>Golf Lessons</h3>
                     <Link to={`/golfcourses/${this.props.match.params.id}/golflessons/new`}><Button size='medium' color='primary'>Schedule a Golf Lesson</Button></Link>
                     <div className='booking-list'>{golfLessonBookingList}</div>
                 </div>

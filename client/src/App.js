@@ -25,9 +25,9 @@ class App extends Component {
     let HomePageComponent = () => {
       return (
         <div> 
-          <h2><a id='anchor-golf-courses'>Golf Courses</a></h2>
+          <h2 className='anchor'><a id='anchor-golf-courses'>GOLF COURSES</a></h2>
           <GolfCourseList />
-          <h2><a id='anchor-tennis-complexes'>Tennis Complexes</a></h2>
+          <h2 className='anchor'><a id='anchor-tennis-complexes'>TENNIS CENTERS</a></h2>
           <TennisComplexList />
         </div>
       )
@@ -43,7 +43,8 @@ class App extends Component {
         <Typography component="div" style={{ height: '100vh' }}>
         <div className='App'>
           <div>
-            <h1 id='main-heading'>Reynolds Lake Oconee Golf and Tennis Scheduler</h1>
+            <img className='hero-image' src='https://i.imgur.com/IOACCpWh.png' alt='Reynolds'/>
+            <h1 id='main-heading'>Golf & Tennis Scheduler</h1>
           </div>
           <Switch>
             <Route exact path='/' render={HomePageComponent}/>

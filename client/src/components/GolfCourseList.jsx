@@ -54,13 +54,13 @@ export default class GolfCourseList extends Component {
             )
         })
         return (
-            <div>
-                <Button href="#The Preserve" className=''>The Preserve</Button>
-                <Button href="#The Oconee" className=''>The Oconee</Button>
-                <Button href="#Great Waters" className=''>Great Waters</Button>
-                <Button href="#The National" className=''>The National</Button>
-                <Button href="#The Creek Club" className=''> The Creek Club</Button>
-                <Button href="#The Landing" className=''>The Landing</Button>
+            <div className='golf-course-list'>
+                <Button href="#The Preserve" className='course-link'>The Preserve</Button>
+                <Button href="#The Oconee" className='course-link'>The Oconee</Button>
+                <Button href="#Great Waters" className='course-link'>Great Waters</Button>
+                <Button href="#The National" className='course-link'>The National</Button>
+                <Button href="#The Creek Club" className='course-link'> The Creek Club</Button>
+                <Button href="#The Landing" className='course-link'>The Landing</Button>
 
                 {golfCourseList}
                 <Link to={'/golfcourses/create'}>Add Golf Course</Link>
