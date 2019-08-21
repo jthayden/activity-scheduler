@@ -5,21 +5,18 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import DraftsIcon from "@material-ui/icons/Drafts";
-import SendIcon from "@material-ui/icons/Send";
 import { Link, Redirect } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import GolfCourseIcon from "@material-ui/icons/GolfCourse";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import MenuIcon from "@material-ui/icons/Menu";
-import '../index.css'
+import "../index.css";
 
 const StyledMenu = withStyles({
     paper: {
         border: "1px solid #d3d4d5"
     }
-})(props => (
+    })(props => (
     <Menu
         elevation={0}
         getContentAnchorEl={null}
@@ -33,9 +30,9 @@ const StyledMenu = withStyles({
         }}
         {...props}
     />
-));
+    ));
 
-const StyledMenuItem = withStyles(theme => ({
+    const StyledMenuItem = withStyles(theme => ({
     root: {
         "&:focus": {
         backgroundColor: theme.palette.primary.main,
@@ -44,9 +41,9 @@ const StyledMenuItem = withStyles(theme => ({
         }
         }
     }
-}))(MenuItem);
+    }))(MenuItem);
 
-export default function CustomizedMenus() {
+    export default function CustomizedMenus() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     function handleClick(event) {
@@ -59,11 +56,11 @@ export default function CustomizedMenus() {
 
     return (
         <div>
-        <Button className='NavButton'
+        <Button
+            className="NavButton"
             aria-controls="customized-menu"
             aria-haspopup="true"
             variant="contained"
-            // color="primary"
             onClick={handleClick}
         >
             <MenuIcon />
@@ -75,19 +72,31 @@ export default function CustomizedMenus() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-            <StyledMenuItem component='a' href="/#anchor-hero-image" onClick={handleClose}>
+            <StyledMenuItem
+            component="a"
+            href="/#anchor-hero-image"
+            onClick={handleClose}
+            >
             <ListItemIcon>
                 <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
             </StyledMenuItem>
-            <StyledMenuItem component='a' href="/#anchor-golf-courses" onClick={handleClose}>
+            <StyledMenuItem
+            component="a"
+            href="/#anchor-golf-courses"
+            onClick={handleClose}
+            >
             <ListItemIcon>
                 <GolfCourseIcon />
             </ListItemIcon>
             <ListItemText primary="Golf" />
             </StyledMenuItem>
-            <StyledMenuItem component='a' href="/#anchor-tennis-complexes" onClick={handleClose}>
+            <StyledMenuItem
+            component="a"
+            href="/#anchor-tennis-complexes"
+            onClick={handleClose}
+            >
             <ListItemIcon>
                 <img
                 src="https://i.imgur.com/dMTwYfe.png"

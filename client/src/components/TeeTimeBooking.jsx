@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import Button from '@material-ui/core/Button';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import IconButton from '@material-ui/core/IconButton'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import TextField from '@material-ui/core/TextField'
-
+import Button from "@material-ui/core/Button";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import IconButton from "@material-ui/core/IconButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextField from "@material-ui/core/TextField";
 
 export default class TeeTimeBooking extends Component {
     state = {
@@ -55,7 +54,7 @@ export default class TeeTimeBooking extends Component {
         )
         .then(() => {
             this.setState({
-            isEditTeeTimeBookingFormDisplayed:false
+            isEditTeeTimeBookingFormDisplayed: false
             });
         });
     };
@@ -68,121 +67,96 @@ export default class TeeTimeBooking extends Component {
 
     toggleEditFormOff = () => {
         this.setState({
-            isEditTeeTimeBookingFormDisplayed:false
-        })
-    }
+        isEditTeeTimeBookingFormDisplayed: false
+        });
+    };
 
     render() {
         if (this.state.redirectToHome) {
-        return <Redirect to={`/golfcourses/${this.state.tee_time_booking.course}/`} />;
+        return (
+            <Redirect to={`/golfcourses/${this.state.tee_time_booking.course}/`} />
+        );
         }
 
         return (
         <div>
-            
             {this.state.isEditTeeTimeBookingFormDisplayed ? (
-                <div>
-                <IconButton onClick={this.toggleEditFormOff} aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton>
+            <div>
+                <IconButton onClick={this.toggleEditFormOff} aria-label="back">
+                <FontAwesomeIcon icon={faChevronLeft} />
+                </IconButton>
                 <h3>Tee Time</h3>
                 <form onSubmit={this.handleSubmit}>
                 <div>
-                <TextField
-                    name='name'
-                    type='text'
-                    id='tee-time-name'
-                    label='name'
-                    margin='normal'
-                    variant='outlined'
+                    <TextField
+                    name="name"
+                    type="text"
+                    id="tee-time-name"
+                    label="name"
+                    margin="normal"
+                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.tee_time_booking.name}
-                />
-                {/* <label htmlFor="tee-time-name">Name</label>
-                <input
-                type="text"
-                name="name"
-                id="tee-time-name"
-                onChange={this.handleInputChange}
-                value={this.state.tee_time_booking.name}
-                /> */}
+                    />
                 </div>
                 <div>
-                <TextField
-                    name='time'
-                    type='text'
-                    id='tee-time-time'
-                    label='time'
-                    margin='normal'
-                    variant='outlined'
+                    <TextField
+                    name="time"
+                    type="text"
+                    id="tee-time-time"
+                    label="time"
+                    margin="normal"
+                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.tee_time_booking.time}
-                />
-                {/* <label htmlFor="tee-time-time">Time</label>
-                <input
-                type="text"
-                name="time"
-                id="tee-time-time"
-                onChange={this.handleInputChange}
-                value={this.state.tee_time_booking.time}
-                /> */}
+                    />
                 </div>
                 <div>
-                <TextField
-                    name='guests'
-                    type='text'
-                    id='tee-time-guests'
-                    label='guest(s)'
-                    margin='normal'
-                    variant='outlined'
+                    <TextField
+                    name="guests"
+                    type="text"
+                    id="tee-time-guests"
+                    label="guest(s)"
+                    margin="normal"
+                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.tee_time_booking.guests}
-                />
-                {/* <label htmlFor="tee-time-guests">Guest(s)</label>
-                <input
-                type="text"
-                name="guests"
-                id="tee-time-guests"
-                onChange={this.handleInputChange}
-                value={this.state.tee_time_booking.guests}
-                /> */}
+                    />
                 </div>
                 <div>
-                <TextField
-                    name='carts'
-                    type='text'
-                    id='tee-time-carts'
-                    label='cart(s)'
-                    margin='normal'
-                    variant='outlined'
+                    <TextField
+                    name="carts"
+                    type="text"
+                    id="tee-time-carts"
+                    label="cart(s)"
+                    margin="normal"
+                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.tee_time_booking.carts}
-                />
-                {/* <label htmlFor="tee-time-carts">Cart(s)</label>
-                <input
-                type="text"
-                name="carts"
-                id="tee-time-carts"
-                onChange={this.handleInputChange}
-                value={this.state.tee_time_booking.carts}
-                /> */}
+                    />
                 </div>
-                <Button type='submit' size='large' color='primary'>Update Tee Time</Button>
-                {/* <input type="submit" value="Update Tee Time" /> */}
-            </form>
+                <Button type="submit" size="large" color="primary">
+                    Update Tee Time
+                </Button>
+                </form>
             </div>
             ) : (
             <div>
-                <Link to={`/golfcourses/${this.state.tee_time_booking.course}/`}><IconButton aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton></Link>
+                <Link to={`/golfcourses/${this.state.tee_time_booking.course}/`}>
+                <IconButton aria-label="back">
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                </IconButton>
+                </Link>
                 <h3>Tee Time</h3>
                 <h5>Name: {this.state.tee_time_booking.name}</h5>
                 <h5>Time: {this.state.tee_time_booking.time}</h5>
                 <h5>Guests: {this.state.tee_time_booking.guests}</h5>
                 <h5>Carts: {this.state.tee_time_booking.carts}</h5>
-                {/* <h5>Course: {this.state.tee_time_booking.course}</h5> */}
 
-                <Button onClick={this.toggleEditTeeTimeBookingForm} color='primary'>
+                <Button onClick={this.toggleEditTeeTimeBookingForm} color="primary">
                 Edit Tee Time
                 </Button>
-                <Button color='secondary' onClick={this.handleDeleteTeeTimeBooking}>
+                <Button color="secondary" onClick={this.handleDeleteTeeTimeBooking}>
                 Delete Tee Time
                 </Button>
             </div>
