@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@material-ui/core/IconButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TextField from '@material-ui/core/TextField'
+
 
 export default class TeeTimeBooking extends Component {
     state = {
@@ -81,49 +83,89 @@ export default class TeeTimeBooking extends Component {
             {this.state.isEditTeeTimeBookingFormDisplayed ? (
                 <div>
                 <IconButton onClick={this.toggleEditFormOff} aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton>
-                
+                <h3>Tee Time</h3>
                 <form onSubmit={this.handleSubmit}>
                 <div>
-                <label htmlFor="tee-time-name">Name</label>
+                <TextField
+                    name='name'
+                    type='text'
+                    id='tee-time-name'
+                    label='name'
+                    margin='normal'
+                    variant='outlined'
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.name}
+                />
+                {/* <label htmlFor="tee-time-name">Name</label>
                 <input
                 type="text"
                 name="name"
                 id="tee-time-name"
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.name}
-                />
+                /> */}
                 </div>
                 <div>
-                <label htmlFor="tee-time-time">Time</label>
+                <TextField
+                    name='time'
+                    type='text'
+                    id='tee-time-time'
+                    label='time'
+                    margin='normal'
+                    variant='outlined'
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.time}
+                />
+                {/* <label htmlFor="tee-time-time">Time</label>
                 <input
                 type="text"
                 name="time"
                 id="tee-time-time"
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.time}
-                />
+                /> */}
                 </div>
                 <div>
-                <label htmlFor="tee-time-guests">Guest(s)</label>
+                <TextField
+                    name='guests'
+                    type='text'
+                    id='tee-time-guests'
+                    label='guest(s)'
+                    margin='normal'
+                    variant='outlined'
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.guests}
+                />
+                {/* <label htmlFor="tee-time-guests">Guest(s)</label>
                 <input
                 type="text"
                 name="guests"
                 id="tee-time-guests"
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.guests}
-                />
+                /> */}
                 </div>
                 <div>
-                <label htmlFor="tee-time-carts">Cart(s)</label>
+                <TextField
+                    name='carts'
+                    type='text'
+                    id='tee-time-carts'
+                    label='cart(s)'
+                    margin='normal'
+                    variant='outlined'
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.carts}
+                />
+                {/* <label htmlFor="tee-time-carts">Cart(s)</label>
                 <input
                 type="text"
                 name="carts"
                 id="tee-time-carts"
                 onChange={this.handleInputChange}
                 value={this.state.tee_time_booking.carts}
-                />
+                /> */}
                 </div>
-                <Button type='submit' color='primary'>Update Tee Time</Button>
+                <Button type='submit' size='large' color='primary'>Update Tee Time</Button>
                 {/* <input type="submit" value="Update Tee Time" /> */}
             </form>
             </div>

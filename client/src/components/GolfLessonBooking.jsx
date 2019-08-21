@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@material-ui/core/IconButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TextField from '@material-ui/core/TextField'
 
 export default class GolfLesson extends Component {
     state = {
@@ -82,39 +83,69 @@ export default class GolfLesson extends Component {
             <div>
                 <IconButton onClick={this.toggleEditFormOff} aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton>
             
-            
+            <h3>Golf Lesson</h3>
             <form onSubmit={this.handleSubmit}>
                 <div>
-                <label htmlFor="golf-lesson-name">Name</label>
+                <TextField
+                            name='name'
+                            type='text'
+                            id='golf-lesson-name'
+                            label='name'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.golf_lesson_booking.name}
+                        />
+                {/* <label htmlFor="golf-lesson-name">Name</label>
                 <input
                 type="text"
                 name="name"
                 id="golf-lesson-name"
                 onChange={this.handleInputChange}
                 value={this.state.golf_lesson_booking.name}
-                />
+                /> */}
                 </div>
                 <div>
-                <label htmlFor="golf-lesson-time">Time</label>
+                    <TextField
+                            name='time'
+                            type='text'
+                            id='golf-lesson-time'
+                            label='time'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.golf_lesson_booking.time}
+                        />
+                {/* <label htmlFor="golf-lesson-time">Time</label>
                 <input
                 type="text"
                 name="time"
                 id="golf-lesson-time"
                 onChange={this.handleInputChange}
                 value={this.state.golf_lesson_booking.time}
-                />
+                /> */}
                 </div>
                 <div>
-                <label htmlFor="golf-lesson-pro">Pro</label>
+                <TextField
+                            name='pro'
+                            type='text'
+                            id='golf-lesson-pro'
+                            label='pro'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.golf_lesson_booking.pro}
+                        />
+                {/* <label htmlFor="golf-lesson-pro">Pro</label>
                 <input
                 type="text"
                 name="pro"
                 id="golf-lesson-pro"
                 onChange={this.handleInputChange}
                 value={this.state.golf_lesson_booking.pro}
-                />
+                /> */}
                 </div>
-                <Button type='submit' color='primary'>Update Golf Lesson</Button>
+                <Button size='large' type='submit' color='primary'>Update Golf Lesson</Button>
                 {/* <input type="submit" value="Update Golf Lesson" /> */}
             </form>
             </div>

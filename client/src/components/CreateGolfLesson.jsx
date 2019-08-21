@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import IconButton from '@material-ui/core/IconButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TextField from '@material-ui/core/TextField'
+
 
 export default class CreateGolfLesson extends Component {
     state = {
@@ -36,40 +41,71 @@ export default class CreateGolfLesson extends Component {
 
         return (
             <div>
-                <h2>Schedule Golf Lesson</h2>
+                <Link to={`/golfcourses/${this.props.match.params.id}/`}><IconButton aria-label='back' ><FontAwesomeIcon icon={faChevronLeft} /></IconButton></Link>
+                <h3>Schedule Golf Lesson</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <div>
-                        <label htmlFor='new-golf-lesson-name'>Name</label>
+                        <TextField
+                            name='name'
+                            type='text'
+                            id='new-golf-lesson-name'
+                            label='name'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.new_golf_lesson.name}
+                        />
+                        {/* <label htmlFor='new-golf-lesson-name'>Name</label>
                         <input 
                             type='text'
                             name='name'
                             id='new-golf-lesson-name'
                             onChange={this.handleInputChange}
                             value={this.state.new_golf_lesson.name.name}
-                        />
+                        /> */}
                         </div>
                         <div>
-                        <label htmlFor='new-golf-lesson-time'>Time</label>
+                        <TextField
+                            name='time'
+                            type='text'
+                            id='new-golf-lesson-time'
+                            label='time'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.new_golf_lesson.time}
+                        />
+                        {/* <label htmlFor='new-golf-lesson-time'>Time</label>
                         <input 
                             type='text'
                             name='time'
                             id='new-golf-lesson-time'
                             onChange={this.handleInputChange}
                             value={this.state.new_golf_lesson.time}
-                        />
+                        /> */}
                         </div>
                         <div>
-                        <label htmlFor='new-golf-lesson-pro'>Pro</label>
+                        <TextField
+                            name='pro'
+                            type='text'
+                            id='new-golf-lesson-pro'
+                            label='pro'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.new_golf_lesson.pro}
+                        />
+                        {/* <label htmlFor='new-golf-lesson-pro'>Pro</label>
                         <input 
                             type='text'
                             name='pro'
                             id='new-golf-lesson-pro'
                             onChange={this.handleInputChange}
                             value={this.state.new_golf_lesson.pro}
-                        />
+                        /> */}
                         </div>
-                        <Button type='submit' color='primary'>Schedule Golf Lesson</Button>
+                        <Button size='large' type='submit' color='primary'>Schedule Golf Lesson</Button>
                         {/* <input 
                             type='submit'
                             value='Schedule Golf Lesson'

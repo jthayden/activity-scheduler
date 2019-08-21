@@ -132,3 +132,20 @@ hr {
   margin-right:2.5em;
   color: darkgray;
 }
+
+div.booking-list {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 2.5em;
+}
+
+/* .booking-panel {
+  display: block;
+  padding: 15px 21px 15px;
+} */
+div.MuiExpansionPanelDetails-root {
+  display:block;
+  padding: 15px 21px 15px;
+}
+

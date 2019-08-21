@@ -58,7 +58,8 @@ export default class TennisComplex extends Component {
                         Guest(s): {court_booking.guests}
                         <br/>
                         Court Type: {court_booking.court_type}
-                        <Link to={`/courtbookings/${court_booking.id}/`}><Button className='info-button' size="small"> Details</Button></Link>
+                        <br/>
+                        <Link to={`/courtbookings/${court_booking.id}/`}><Button className='info-button' size="medium" color='primary'> Details</Button></Link>
                     </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -86,7 +87,8 @@ export default class TennisComplex extends Component {
                         Member: {tennis_lesson_booking.name} 
                         <br/>
                         Pro: {tennis_lesson_booking.pro}
-                        <Link to={`/tennislessons/${tennis_lesson_booking.id}/`}><Button className='info-button' size="small"> Details</Button></Link>
+                        <br/>
+                        <Link to={`/tennislessons/${tennis_lesson_booking.id}/`}><Button className='info-button' color='primary' size="medium"> Details</Button></Link>
                     </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -107,12 +109,12 @@ export default class TennisComplex extends Component {
                     <p>{this.state.tennis_complex.description}</p>
 
                     <h4>Reserved Courts</h4>
-                    <Link to={`/tenniscomplexes/${this.props.match.params.id}/courtbookings/new`}>Reserve a Court</Link>
-                    <div>{courtBookingList}</div>
+                    <Link to={`/tenniscomplexes/${this.props.match.params.id}/courtbookings/new`}><Button size='medium' color='primary'>Reserve a Court</Button></Link>
+                    <div className='booking-list'>{courtBookingList}</div>
 
                     <h4>Tennis Lessons</h4>
-                    <Link to={`/tenniscomplexes/${this.props.match.params.id}/tennislessons/new`}>Schedule a Tennis Lesson</Link>
-                    <div>{tennisLessonBookingList}</div>
+                    <Link to={`/tenniscomplexes/${this.props.match.params.id}/tennislessons/new`}><Button size='medium' color='primary'>Schedule a Tennis Lesson</Button></Link>
+                    <div className='booking-list'>{tennisLessonBookingList}</div>
                 </div>
                 
             </div>

@@ -64,7 +64,8 @@ export default class GolfCourse extends Component {
                             Guest(s): {tee_time_booking.guests}
                             <br/>
                             Cart(s): {tee_time_booking.carts}
-                            <Link to={`/teetimes/${tee_time_booking.id}/`}><Button className='info-button' size="small"> Details</Button></Link>
+                            <br/>
+                            <Link to={`/teetimes/${tee_time_booking.id}/`}><Button color='primary' className='info-button' size="medium"> Details</Button></Link>
                         </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -95,7 +96,8 @@ export default class GolfCourse extends Component {
                             Member: {golf_lesson_booking.name} 
                             <br/>
                             Pro: {golf_lesson_booking.pro}
-                            <Link to={`/golflessons/${golf_lesson_booking.id}/`}><Button className='info-button' size="small"> Details</Button></Link>
+                            <br/>
+                            <Link to={`/golflessons/${golf_lesson_booking.id}/`}><Button className='info-button' size="medium"> Details</Button></Link>
                         </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -112,12 +114,14 @@ export default class GolfCourse extends Component {
                     <p>{this.state.golf_course.description}</p>
                     
                     <h4>Tee Time Bookings</h4>
-                    <Link to={`/golfcourses/${this.props.match.params.id}/teetimes/new`}>Book a Tee Time</Link>
-                    <div>{teeTimeBookingList}</div>
+                    <Link to={`/golfcourses/${this.props.match.params.id}/teetimes/new`}><Button size='medium' color='primary'>Book a Tee Time</Button></Link>
+                    <div className='booking-list'>
+                    {teeTimeBookingList}
+                    </div>
 
                     <h4>Golf Lessons</h4>
-                    <Link to={`/golfcourses/${this.props.match.params.id}/golflessons/new`}>Schedule a Golf Lesson</Link>
-                    <div>{golfLessonBookingList}</div>
+                    <Link to={`/golfcourses/${this.props.match.params.id}/golflessons/new`}><Button size='medium' color='primary'>Schedule a Golf Lesson</Button></Link>
+                    <div className='booking-list'>{golfLessonBookingList}</div>
                 </div>
             </div>
         )

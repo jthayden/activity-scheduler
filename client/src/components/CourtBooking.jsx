@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@material-ui/core/IconButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TextField from '@material-ui/core/TextField'
 
 export default class CourtBooking extends Component {
     state = {
@@ -70,49 +71,89 @@ export default class CourtBooking extends Component {
                     ? (
                     <div>
                         <IconButton onClick={this.toggleEditFormOff} aria-label='back'><FontAwesomeIcon icon={faChevronLeft}/></IconButton>
-                    
+                    <h3>Court Reservation</h3>
                     <form onSubmit={this.handleSubmit}>
                         <div>
-                        <label htmlFor="court-booking-name">Name</label>
+                        <TextField
+                            name='name'
+                            type='text'
+                            id='court-booking-name'
+                            label='name'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.court_booking.name}
+                        />
+                        {/* <label htmlFor="court-booking-name">Name</label>
                         <input 
                             type="text"
                             name='name'
                             id='court-booking-name'
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.name}
-                        />
+                        /> */}
                         </div>
                         <div>
-                        <label htmlFor="court-booking-time">Time</label>
+                        <TextField
+                            name='time'
+                            type='text'
+                            id='court-booking-time'
+                            label='time'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.court_booking.time}
+                        />
+                        {/* <label htmlFor="court-booking-time">Time</label>
                         <input 
                             type="text"
                             name='time'
                             id='court-booking-time'
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.time}
-                        />
+                        /> */}
                         </div>
                         <div>
-                        <label htmlFor="court-booking-court-type">Court Type</label>
+                        <TextField
+                            name='court_type'
+                            type='text'
+                            id='court-booking-court-type'
+                            label='court-type'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.court_booking.court_type}
+                        />
+                        {/* <label htmlFor="court-booking-court-type">Court Type</label>
                         <input 
                             type="text"
                             name='court_type'
                             id='court-booking-court-type'
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.court_type}
-                        />
+                        /> */}
                         </div>
                         <div>
-                        <label htmlFor="court-booking-guests">Guests</label>
+                        <TextField
+                            name='guests'
+                            type='text'
+                            id='court-booking-guests'
+                            label='guest(s)'
+                            margin='normal'
+                            variant='outlined'
+                            onChange={this.handleInputChange}
+                            value={this.state.court_booking.guests}
+                        />
+                        {/* <label htmlFor="court-booking-guests">Guests</label>
                         <input 
                             type="text"
                             name='guests'
                             id='court-booking-guests'
                             onChange={this.handleInputChange}
                             value={this.state.court_booking.guests}
-                        />
+                        /> */}
                         </div>
-                        <Button type='submit' color='primary'>Update Court Reservation</Button>
+                        <Button size='large' type='submit' color='primary'>Update Court Reservation</Button>
                         {/* <input type='submit' value='Update Court Reservation'/> */}
                     </form>
                     </div>

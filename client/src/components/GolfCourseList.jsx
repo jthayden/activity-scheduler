@@ -30,7 +30,7 @@ export default class GolfCourseList extends Component {
             return (
                 <div>
                 
-                <ButtonBase focusRipple key={golf_course.name} className='image'>
+                <ButtonBase focusRipple key={golf_course.name} className='image' id={golf_course.name}>
                     {/* <span className='imageSrc'/> */}
                     <img src={golf_course.photo_url} alt={golf_course.name}/>
                     {/* <span className='imageBackdrop'/> */}
