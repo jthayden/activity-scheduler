@@ -54,7 +54,7 @@ getAllTennisComplexes = () => {
         })
         return (
             <div>
-                <Button href="#Lake Club Tennis Center" className=''>The Lake Club Tennis Center</Button>
+                <Button href="#Lake Club Tennis Complex" className=''>The Lake Club Tennis Center</Button>
                 <Button href="#The Landing Complex">The Landing Complex</Button>
 
                 {tennisComplexList}
