@@ -63,7 +63,7 @@ export default class GolfCourseList extends Component {
                 <Button href="#The Landing" className='course-link'>The Landing</Button>
 
                 {golfCourseList}
-                <Link to={'/golfcourses/create'}>Add Golf Course</Link>
+                {/* <Link to={'/golfcourses/create'}>Add Golf Course</Link> */}
             </div>
         )
     }
