@@ -81,35 +81,13 @@ button.NavButton:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* font-size: 40px; */
   color: white;
-  /* text-decoration-line: none; */
 }
-
-/* .imageSrc {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-} */
-
-/* .imageBackdrop {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: .4;
-} */
 
 .imageTitle {
   position: relative;
   color: white;
   text-decoration-line: none;
-  /* font-size: 50px; */
 }
 
 .imageTitle:hover {
@@ -138,17 +116,12 @@ div.booking-list {
   margin: 2.5em;
 }
 
-/* .booking-panel {
-  display: block;
-  padding: 15px 21px 15px;
-} */
 div.MuiExpansionPanelDetails-root {
   display: block;
   padding: 15px 21px 15px;
 }
 
 img.hero-image {
-  /* width:70vh; */
   max-height: 275px;
   max-width: 275px;
 }
