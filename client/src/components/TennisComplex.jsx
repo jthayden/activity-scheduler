@@ -53,12 +53,12 @@ export default class TennisComplex extends Component {
                     id="panel1a-header"
                 >
                     <Typography className="heading">
-                    {court_booking.time}
+                    Member: {court_booking.name}
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography>
-                    Member: {court_booking.name}
+                    Time: {court_booking.time}
                     <br />
                     Guest(s): {court_booking.guests}
                     <br />
@@ -93,14 +93,14 @@ export default class TennisComplex extends Component {
                     id="panel1a-header"
                 >
                     <Typography className="heading">
-                    {tennis_lesson_booking.time}
+                    Pro: {tennis_lesson_booking.pro}
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography>
                     Member: {tennis_lesson_booking.name}
                     <br />
-                    Pro: {tennis_lesson_booking.pro}
+                    Time: {tennis_lesson_booking.time}
                     <br />
                     <Link to={`/tennislessons/${tennis_lesson_booking.id}/`}>
                         <Button

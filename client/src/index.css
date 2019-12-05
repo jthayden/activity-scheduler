@@ -158,3 +158,20 @@ h5 {
 h3 {
   text-decoration-line: underline;
 }
+
+.MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input.MuiInputBase-inputSelect.MuiSelect-outlined {
+  width: 251px;
+  margin-top:10px;
+}
+
+.MuiInputBase-input.MuiOutlinedInput-input {
+  width:260px;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeLarge {
+  padding: 20px 24px;
+}
+
+.dropdown {
+  margin-top:11px;
+}

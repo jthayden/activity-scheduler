@@ -6,6 +6,10 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from '@material-ui/core/InputLabel';
 
 export default class CourtBooking extends Component {
     state = {
@@ -102,40 +106,50 @@ export default class CourtBooking extends Component {
                     />
                 </div>
                 <div>
-                    <TextField
+                <TextField
                     name="time"
-                    type="text"
+                    type="datetime-local"
                     id="court-booking-time"
-                    label="time"
+                    // helperText="Please select a time."
                     margin="normal"
                     variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.court_booking.time}
-                    />
+                />
                 </div>
-                <div>
-                    <TextField
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="court-booking-court-type-label">
+                        court type
+                    </InputLabel>
+                <Select
                     name="court_type"
-                    type="text"
                     id="court-booking-court-type"
-                    label="court-type"
-                    margin="normal"
-                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.court_booking.court_type}
-                    />
+                    >
+                        <MenuItem value='clay'>clay</MenuItem>
+                        <MenuItem value="hard">hard</MenuItem>
+                    </Select>
+                    </FormControl>
                 </div>
-                <div>
-                    <TextField
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="court-booking-guests-label">
+                        guest(s)
+                    </InputLabel>
+                <Select
                     name="guests"
-                    type="text"
                     id="court-booking-guests"
-                    label="guest(s)"
-                    margin="normal"
-                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.court_booking.guests}
-                    />
+                    >
+                        <MenuItem value={0}>0</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                    </Select>
+                    </FormControl>
                 </div>
                 <Button size="large" type="submit" color="primary">
                     Update Court Reservation

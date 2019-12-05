@@ -6,6 +6,10 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from '@material-ui/core/InputLabel';
 
 export default class CreateTennisLesson extends Component {
     state = {
@@ -67,26 +71,32 @@ export default class CreateTennisLesson extends Component {
                 <div>
                 <TextField
                     name="time"
-                    type="text"
+                    type="datetime-local"
                     id="new-tennis-lesson-time"
-                    label="time"
+                    helperText="Please select a time."
                     margin="normal"
                     variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.new_tennis_lesson.time}
                 />
                 </div>
-                <div>
-                <TextField
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="new-tennis-lesson-pro-label">
+                        pro
+                    </InputLabel>
+                <Select
                     name="pro"
-                    type="text"
                     id="new-tennis-lesson-pro"
-                    label="pro"
-                    margin="normal"
-                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.new_tennis_lesson.pro}
-                />
+                    >
+                        <MenuItem value="Peter">Peter</MenuItem>
+                        <MenuItem value="Kathy">Kathy</MenuItem>
+                        <MenuItem value="John">John</MenuItem>
+                        <MenuItem value="Kim">Kim</MenuItem>
+                    </Select>
+                    </FormControl>
                 </div>
                 <Button size="large" type="submit" color="primary">
                 Schedule Tennis Lesson

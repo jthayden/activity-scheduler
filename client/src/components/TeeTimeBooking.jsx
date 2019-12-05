@@ -6,6 +6,10 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from '@material-ui/core/InputLabel';
 
 export default class TeeTimeBooking extends Component {
     state = {
@@ -100,6 +104,56 @@ export default class TeeTimeBooking extends Component {
                     />
                 </div>
                 <div>
+                <TextField
+                    name="time"
+                    id="tee-time-time"
+                    type="datetime-local"
+                    // helperText="Please select a time."
+                    margin="normal"
+                    variant="outlined"
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.time}
+                />
+                </div>
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="tee-time-guests-label">
+                        guest(s)
+                    </InputLabel>
+                <Select
+                    name="guests"
+                    id="tee-time-guests"
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.guests}
+                    >
+                        <MenuItem value={0}>0</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                    </Select>
+                    </FormControl>
+                </div>
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="tee-time-carts-label">
+                        cart(s)
+                    </InputLabel>
+                <Select
+                    name="carts"
+                    id="tee-time-carts"
+                    onChange={this.handleInputChange}
+                    value={this.state.tee_time_booking.carts}
+                    >
+                        <MenuItem value={0}>0</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                    </Select>
+                    </FormControl>
+                </div>
+                
+                
+                
+                {/* <div>
                     <TextField
                     name="time"
                     type="text"
@@ -134,7 +188,7 @@ export default class TeeTimeBooking extends Component {
                     onChange={this.handleInputChange}
                     value={this.state.tee_time_booking.carts}
                     />
-                </div>
+                </div> */}
                 <Button type="submit" size="large" color="primary">
                     Update Tee Time
                 </Button>

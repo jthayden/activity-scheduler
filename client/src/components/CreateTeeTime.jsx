@@ -8,6 +8,10 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from '@material-ui/core/InputLabel';
 
 export default class CreateTeeTime extends Component {
     state = {
@@ -52,10 +56,10 @@ export default class CreateTeeTime extends Component {
             <div>
                 <div>
                 <TextField
+                    label="name"
                     name="name"
                     type="text"
                     id="new-tee-time-name"
-                    label="name"
                     margin="normal"
                     variant="outlined"
                     onChange={this.handleInputChange}
@@ -65,38 +69,49 @@ export default class CreateTeeTime extends Component {
                 <div>
                 <TextField
                     name="time"
-                    type="text"
                     id="new-tee-time-time"
-                    label="time"
+                    type="datetime-local"
+                    helperText="Please select a time."
                     margin="normal"
                     variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.new_tee_time.time}
                 />
                 </div>
-                <div>
-                <TextField
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="new-tee-time-guests-label">
+                        guest(s)
+                    </InputLabel>
+                <Select
                     name="guests"
-                    type="text"
                     id="new-tee-time-guests"
-                    label="guest(s)"
-                    margin="normal"
-                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.new_tee_time.guests}
-                />
+                    >
+                        <MenuItem value={0}>0</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                    </Select>
+                    </FormControl>
                 </div>
-                <div>
-                <TextField
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="new-tee-time-carts-label">
+                        cart(s)
+                    </InputLabel>
+                <Select
                     name="carts"
-                    type="text"
                     id="new-tee-time-carts"
-                    label="cart(s)"
-                    margin="normal"
-                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.new_tee_time.carts}
-                />
+                    >
+                        <MenuItem value={0}>0</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                    </Select>
+                    </FormControl>
                 </div>
                 <Button color="primary" size="large" className="" type="submit">
                 Book Tee Time

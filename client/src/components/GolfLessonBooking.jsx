@@ -6,6 +6,10 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from '@material-ui/core/InputLabel';
 
 export default class GolfLesson extends Component {
     state = {
@@ -104,28 +108,34 @@ export default class GolfLesson extends Component {
                     />
                 </div>
                 <div>
-                    <TextField
+                <TextField
                     name="time"
-                    type="text"
                     id="golf-lesson-time"
-                    label="time"
+                    type="datetime-local"
+                    // helperText="Please select a time."
                     margin="normal"
                     variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.golf_lesson_booking.time}
-                    />
+                />
                 </div>
-                <div>
-                    <TextField
+                <div className="dropdown">
+                <FormControl variant="outlined">
+                    <InputLabel id="golf-lesson-pro-label">
+                        pro
+                    </InputLabel>
+                <Select
                     name="pro"
-                    type="text"
                     id="golf-lesson-pro"
-                    label="pro"
-                    margin="normal"
-                    variant="outlined"
                     onChange={this.handleInputChange}
                     value={this.state.golf_lesson_booking.pro}
-                    />
+                    >
+                        <MenuItem value="Paul">Paul</MenuItem>
+                        <MenuItem value="Joe">Joe</MenuItem>
+                        <MenuItem value="Roger">Roger</MenuItem>
+                        <MenuItem value="Samantha">Samantha</MenuItem>
+                    </Select>
+                    </FormControl>
                 </div>
                 <Button size="large" type="submit" color="primary">
                     Update Golf Lesson

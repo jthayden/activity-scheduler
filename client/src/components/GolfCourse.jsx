@@ -54,12 +54,12 @@ export default class GolfCourse extends Component {
                     id="panel1a-header"
                     >
                     <Typography className="heading">
-                        {tee_time_booking.time}
+                        Member: {tee_time_booking.name}
                     </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                     <Typography>
-                        Member: {tee_time_booking.name}
+                        Time: {tee_time_booking.time}
                         <br />
                         Guest(s): {tee_time_booking.guests}
                         <br />
@@ -95,14 +95,14 @@ export default class GolfCourse extends Component {
                     id="panel1a-header"
                 >
                     <Typography className="heading">
-                    {golf_lesson_booking.time}
+                    Pro: {golf_lesson_booking.pro}
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography>
                     Member: {golf_lesson_booking.name}
                     <br />
-                    Pro: {golf_lesson_booking.pro}
+                    Time: {golf_lesson_booking.time}
                     <br />
                     <Link to={`/golflessons/${golf_lesson_booking.id}/`}>
                         <Button className="info-button" size="medium">
